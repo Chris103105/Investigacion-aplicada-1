@@ -1,0 +1,396 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "PT Serif", serif;
+}
+
+.header {
+    position: relative;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    animation: cambiarFondo 30s infinite linear;
+}
+
+@keyframes cambiarFondo {
+    0% { background-image: url('../images/Fondo1.webp'); }
+    33% { background-image: url('../images/Fondo1.webp'); } 
+    36% { background-image: url('../images/Fondo2.jpg'); }  
+    66% { background-image: url('../images/Fondo2.jpg'); }  
+    69% { background-image: url('../images/Fondo3.jpg'); }  
+    100% { background-image: url('../images/Fondo3.jpg'); }  
+}
+
+
+
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0; 
+}
+
+
+.navbar {
+    font-size: 1.3em;
+    position: fixed; 
+    top: 0;
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 50px; 
+    background: rgb(37, 37, 37); 
+    box-sizing: border-box;
+    z-index: 10; 
+}
+
+.tarjeta {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+.imagencitas {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.tarjeta:hover .imagencitas {
+  filter: brightness(50%);
+}
+
+.info-hover {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  font-size: 0.9em;
+  text-align: center;
+  transition: bottom 0.4s ease-in-out;
+  font-family: sans-serif;
+}
+
+.tarjeta:hover .info-hover {
+  bottom: 0;
+}
+
+
+.imagencitas{
+    width: 300px;
+    height: 250px;
+    border-radius: 10%;
+}
+
+
+.salva {
+    position: relative; /* o absolute si quieres posicionarla respecto al contenedor padre */
+    width: 250px;
+    left: 10%;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.salva:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* SECCIÓN CREADORES - CONTENEDOR GENERAL */
+@keyframes pulseShadow {
+    0% {
+        box-shadow: 0 10px 25px  rgba(0, 153, 255, 0.623);
+    }
+    50% {
+        box-shadow: 0 15px 35px rgba(0, 153, 255, 0.25);
+    }
+    100% {
+        box-shadow: 0 10px 25px rgba(0, 153, 255, 0.623)
+    }
+}
+
+.tarjeta{
+    animation: pulseShadow 4s ease-in-out infinite;
+    transition: box-shadow 0.4s ease;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.9em;
+    margin-top: 80px; 
+}
+
+article {
+    background-color: #80CEE1;
+    padding: 50px;
+    margin: 45px 0;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.turismo {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.turismo h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tarjetas-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    padding: 20px;
+}
+
+.tarjeta {
+    background: #fff;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: #0077cc;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tarjeta p {
+    font-size: 1.5em;
+    color: #555;
+}
+
+h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+
+/* FOOTER */
+#footer {
+    margin-top: 50px;
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 19px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Ajuste logo y redes en footer */
+.logaso {
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.social-icons {
+    float: right;
+    margin-right: 20px;
+    padding: 10px 0;
+}
+
+.icon img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Clear floats footer */
+#footer::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.video-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.video-section h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.video-directo {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+  /* Diseño base ya dado (igual que el tuyo) */
+
+/* Media para pantallas muy grandes >= 1920px */
+@media screen and (min-width: 1920px) {
+  .header {
+    height: 850px;
+  }
+  .header h1 {
+    font-size: clamp(3em, 5vw, 6em);
+  }
+  .salva {
+    width: 300px;
+    left: 70%;
+    top: 35%;
+  }
+  .tarjeta {
+    width: 350px;
+  }
+  .tarjeta p {
+    font-size: 1.7em;
+  }
+}
+
+/* Tablet y móvil grande (max-width 786px) */
+@media screen and (max-width: 786px) {
+  .header {
+    height: 480px;
+    padding: 10px 20px;
+  }
+  .header h1 {
+    font-size: 2.8em;
+  }
+  .navbar {
+    font-size: 1em;
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tarjetas-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 5px;
+  }
+  .tarjeta {
+    width: 90%;
+    max-width: 340px;
+  }
+  .tarjeta p {
+    font-size: 1.3em;
+  }
+  .salva {
+    width: 240px;
+    left: 35%;
+    top: 30%;
+  }
+  .footer-logo img {
+    width: 100px;
+  }
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+  .fote {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .header {
+    height: 350px;
+  }
+  .header h1 {
+    font-size: 1.8em;
+    margin: 15px 10px;
+  }
+  .navbar {
+    font-size: 0.85em;
+    padding: 8px 10px;
+  }
+  .tarjetas-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 5px;
+  }
+  .tarjeta {
+    width: 95%;
+    max-width: 320px;
+    padding: 15px;
+  }
+  .tarjeta h3 {
+    font-size: 1.2em;
+  }
+  .tarjeta p {
+    font-size: 1em;
+  }
+  .imagencitas {
+    width: 100%;
+    height: 200px;
+    max-width: 280px;
+    border-radius: 10%;
+  }
+  .turismo h2 {
+    font-size: 1.4em;
+  }
+  .salva {
+    position: relative; /* mantiene relative */
+    width: 180px;
+    left: auto;  /* quitar left */
+    top: 90%;   /* quitar top */
+    display: block;
+    margin: 0 auto; /* centro horizontal */
+  }
+  .footer-logo img {
+    width: 80px;
+  }
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  .fote {
+    font-size: 13px;
+  }
+}
